@@ -1,10 +1,39 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
 <html>
   <head>
-    <title>Angular QuickStart</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+		<meta charset="utf-8" />
+		<title>Herding Pixels</title>
+		<meta name="keywords" content="HTML5,CSS3" />
+		<meta name="description" content="" />
+		<meta name="Author" content="Gary Herd [http://herdingpixels.net]" />
+		<meta name="keywords" content="web design, Web Design Houston, website redesign, Website Design, mobile friendly website, is my website mobile friendly">
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout-responsive.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/orange.css" rel="stylesheet" type="text/css" /><!-- orange: default style -->
+
+		<!-- LOCAL CSS -->
+		<style>
+			#headshot {
+				float: left;
+				margin-right: 10px;
+			}
+		</style>
+		<!-- /LOCAL CSS -->
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -17,6 +46,8 @@
     <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
+
+    <script defer src='https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit'></script>
   </head>
 
   <body>

@@ -12,3 +12,4 @@ _temp
 .editorconfig
 dist/
 .vscode/
+debug.log
