@@ -5,6 +5,7 @@ import { AppComponent }  from './app.component';
 import { TopNavComponent } from './top-nav.component';
 import { PageFooterComponent } from './page-footer.component';
 import { WrapperComponent } from './wrapper.component';
+import { BlogComponent } from './blog.component';
 
 @NgModule({
   imports:      [ BrowserModule ],
@@ -12,7 +13,8 @@ import { WrapperComponent } from './wrapper.component';
     AppComponent,
     PageFooterComponent,
     WrapperComponent,
-    TopNavComponent
+    TopNavComponent,
+    BlogComponent
   ],
   bootstrap:    [ AppComponent ]
 })
