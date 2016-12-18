@@ -9,6 +9,6 @@ export class TopNavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { console.log('ngOnInit');}
+  ngOnInit() { console.log('ngOnInit top nav');}
 
 }

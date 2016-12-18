@@ -7,10 +7,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-describe('AppComponent', function () {
+describe('TopNavComponent', function () {
   let de: DebugElement;
-  let comp: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+  let comp: TopNavComponent;
+  let fixture: ComponentFixture<TopNavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -20,9 +20,9 @@ describe('AppComponent', function () {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(TopNavComponent);
     comp = fixture.componentInstance;
-    // de = fixture.debugElement.query(By.css('h1'));
+    de = fixture.debugElement.query(By.css('header'));
   });
 
   it('should create component', () => expect(comp).toBeDefined() );
