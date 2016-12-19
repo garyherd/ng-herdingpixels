@@ -7,8 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent }  from './app.component';
 import { TopNavComponent } from './top-nav.component';
 import { PageFooterComponent } from './page-footer.component';
-import { WrapperComponent } from './wrapper.component';
+import { HeroComponent } from './hero.component';
 import { BlogComponent } from './blog.component';
+import { AboutComponent } from './about.component';
+import { PricingComponent } from './pricing.component';
+import { ContactUsComponent } from './contact-us.component';
 
 
 @NgModule({
@@ -19,9 +22,12 @@ import { BlogComponent } from './blog.component';
   declarations: [
     AppComponent,
     PageFooterComponent,
-    WrapperComponent,
+    HeroComponent,
     TopNavComponent,
-    BlogComponent
+    BlogComponent,
+    AboutComponent,
+    PricingComponent,
+    ContactUsComponent
   ],
   bootstrap:    [ AppComponent ]
 })

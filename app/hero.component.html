@@ -1,0 +1,123 @@
+<!--HERO-->
+<section id="hero" class="padding30 special-row">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6">
+				<h2 class="text-center">Is&nbsp;<strong>your</strong>&nbsp;website mobile-friendly?</h2>
+				<div>
+					<figure>
+						<img class="radius6 img-responsive" src="assets/images/viewport.png" alt="is my website mobile friendly" />
+					</figure>
+				</div>
+			</div>
+
+			<!-- FORM -->
+			<div class="col-md-5 col-md-offset-1">
+
+				<h2 class="text-center">Request your&nbsp;<strong><em>free</em></strong>&nbsp;website audit today!</h2>
+
+				<!--
+					if you want to use your own contact script, remove .hide class
+				-->
+
+				<!-- SENT OK -->
+				<div id="audit_sent_ok_" class="alert alert-success fade in fsize16 hide">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>Thank You!</strong> Your message successfully sent!
+				</div>
+				<!-- /SENT OK -->
+
+				<!-- SENT FAILED -->
+				<div id="audit_sent_error_" class="alert alert-danger fade in fsize16 hide">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>Message not sent!</strong>
+				</div>
+				<!-- /SENT FAILED -->
+
+				<form id="auditForm" class="white-row" action="php/contact.php" method="post">
+					<div class="row">
+						<!--<div class="">-->
+							<div class="form-group col-md-12">
+								<label>Name *</label>
+								<input type="text" value="" maxlength="100" class="form-control" name="audit_name" id="audit_name" required>
+							</div>
+							<div class="form-group col-md-12">
+								<label>E-mail*</label>
+								<input type="email" value="" maxlength="100" class="form-control" name="audit_email" id="audit_email" required>
+							</div>
+							<div class="form-group col-md-12">
+								<label>URL*</label>
+								<input type="url" value=""  placeholder = "include the http://" maxlength="100" class="form-control" name="audit_url" id="audit_url" required>
+							</div>
+						<!--</div>-->
+					</div>
+
+					<br />
+
+					<div class="row">
+						<div class="form-group">
+							<div class="col-md-12">
+								<div class="g-recaptcha" data-sitekey="6LdpdwwUAAAAAMAKb1xXxGpBoh9V6YFgGDKpI4mg"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group">
+							<div class="col-md-12">
+								<input id="contact_submit" type="submit" value="Get Free Website Audit" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div><br>
+			<!-- /FORM -->
+		</div>
+
+	<!-- INFO -->
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="divider half-margins"></div>
+				<h2 class="text-center">Most users are now coming to your site on a <strong>mobile device.</strong></h2>
+					<p><i class="fa fa-mobile fa-lg" aria-hidden="true"></i>&nbsp;In April 2015, Google began boosting search rankings for websites that are mobile friendly.</p>
+					<p><i class="fa fa-mobile fa-lg" aria-hidden="true"></i>&nbsp;In the US, <a href="https://think.withgoogle.com/mobileplanet/downloads/">94% of people with smartphones search for local information on their phones</a>.
+						Interestingly,
+						<a href="https://www.thinkwithgoogle.com/research-studies/creating-moments-that-matter.html">77% of mobile searches occur at home or at work</a>
+						, places where desktop computers are likely to be present.</p>
+					<p><i class="fa fa-mobile fa-lg" aria-hidden="true"></i>&nbsp;A mobile website puts you in a position to stand out among competitors - if your website doesn't look good on a smartphone users will move on to one that does. A mobile website ensures that you - not your competitors - capture visitor attention while you have it. </p>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="divider half-margins"></div>
+				<h2 class="text-center">So get your site a
+					<strong>mobile-friendly upgrade</strong>
+				</h2>
+				<div>
+					<figure>
+						<img class="img-responsive center-block" src="assets/images/transition.png" alt="shows desktop to mobile transition">
+					</figure>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="divider half-margins"></div>
+				<h2 class="text-center">And let Herding Pixels make today's web work for <strong><em>you!</em></strong></h2>
+				<div class="row">
+					<div class="col-xs-8 col-xs-offset-2">
+						<a href="#wrapper" class="center-block btn btn-primary btn-lg">FREE Website Audit</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- /INFO -->
+	</div>
+</section>
+<!--/HERO-->

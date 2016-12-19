@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'wrapper',
+  selector: 'hero',
   providers: [],
-  templateUrl: 'wrapper.component.html'
+  templateUrl: 'hero.component.html'
 })
-export class WrapperComponent implements OnInit {
+export class HeroComponent implements OnInit {
 
   constructor() { }
 
