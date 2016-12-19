@@ -1,7 +1,6 @@
 import { AppComponent } from './app.component';
-import { WrapperComponent } from './wrapper.component';
-import { TopNavComponent } from './top-nav.component';
-import { PageFooterComponent } from './page-footer.component';
+import { AppRoutingModule } from './app-routing.module';
+import { TestModuleSetting } from './testing-module-model';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';
@@ -13,10 +12,7 @@ describe('AppComponent', function () {
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AppComponent, WrapperComponent, TopNavComponent, PageFooterComponent ]
-    })
-    .compileComponents();
+      TestBed.configureTestingModule(TestModuleSetting).compileComponents();
   }));
 
   beforeEach(() => {

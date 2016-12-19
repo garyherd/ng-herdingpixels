@@ -1,8 +1,6 @@
 import { AppComponent } from './app.component';
-import { WrapperComponent } from './wrapper.component';
-import { TopNavComponent } from './top-nav.component';
-import { PageFooterComponent } from './page-footer.component';
 import { BlogComponent } from './blog.component';
+import { TestModuleSetting } from './testing-module-model';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';
@@ -14,16 +12,7 @@ describe('BlogComponent', function () {
   let fixture: ComponentFixture<BlogComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        WrapperComponent,
-        TopNavComponent,
-        PageFooterComponent,
-        BlogComponent
-      ]
-    })
-    .compileComponents();
+      TestBed.configureTestingModule(TestModuleSetting).compileComponents();
   }));
 
   beforeEach(() => {
