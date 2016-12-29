@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
     </div>
     <!-- /WRAPPER -->
     <page-footer></page-footer>
-    `
+    `,
+
 })
 export class AppComponent  {}
