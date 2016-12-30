@@ -13,6 +13,7 @@ import { BlogPostComponent } from './blog-post.component';
 import { AboutComponent } from './about.component';
 import { PricingComponent } from './pricing.component';
 import { ContactUsComponent } from './contact-us.component';
+import { BlogPostService } from './blog-post.service';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ContactUsComponent } from './contact-us.component';
     PricingComponent,
     ContactUsComponent
   ],
+  providers: [BlogPostService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

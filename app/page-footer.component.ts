@@ -11,5 +11,5 @@ export class PageFooterComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { console.log('ngOnInit'); }
+  ngOnInit() {}
 }
