@@ -5,7 +5,7 @@ import { PageFooterComponent } from './page-footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { BlogComponent } from './blog.component';
-import { BlogPostComponent } from './blog-post.component';
+import { BlogPostPreviewComponent } from './blog-post-preview.component';
 import { AboutComponent } from './about.component'
 import { PricingComponent } from './pricing.component';
 import { ContactUsComponent } from './contact-us.component';
@@ -20,7 +20,7 @@ export var TestModuleSetting = {
             TopNavComponent,
             PageFooterComponent,
             BlogComponent,
-            BlogPostComponent,
+            BlogPostPreviewComponent,
             AboutComponent,
             PricingComponent,
             ContactUsComponent
