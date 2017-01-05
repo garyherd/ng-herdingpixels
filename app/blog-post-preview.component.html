@@ -3,7 +3,8 @@
 
 							<!-- article title -->
 							<div class="item-title">
-								<h2><a href="blog-single-sidebar-left.html">{{title}}</a></h2>
+								<!--<h2><a href="blog-single-sidebar-left.html">{{title}}</a></h2>-->
+								<h2><a [routerLink]="['/post', id]">{{title}}</a></h2>
 								<a href="blog.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> Business</a>
 								<a href="blog-single-sidebar-left.html#comments" class="scrollTo label label-default light"><i class="fa fa-comment-o"></i> 3 Comments</a>
 								<span class="label label-default light">{{publishDate}}</span>

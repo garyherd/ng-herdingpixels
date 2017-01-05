@@ -8,4 +8,7 @@ export class BlogPostService {
   getPosts(): Promise<BlogPost[]> {
     return Promise.resolve(POSTS);
   }
+  getPost(id: number): Promise<BlogPost> {
+    return this.getPosts().then(posts => posts.find(post => post.id === id));
+  }
 }

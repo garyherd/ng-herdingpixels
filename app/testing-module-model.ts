@@ -10,6 +10,7 @@ import { AboutComponent } from './about.component'
 import { PricingComponent } from './pricing.component';
 import { ContactUsComponent } from './contact-us.component';
 import { BlogPostService } from './blog-post.service';
+import { BlogPostFullComponent } from './blog-post-full.component';
 
 import {APP_BASE_HREF} from '@angular/common';
 
@@ -23,7 +24,8 @@ export var TestModuleSetting = {
             BlogPostPreviewComponent,
             AboutComponent,
             PricingComponent,
-            ContactUsComponent
+            ContactUsComponent,
+            BlogPostFullComponent
       ],
       imports: [AppRoutingModule],
       providers: [{provide: APP_BASE_HREF, useValue : '/' }, BlogPostService]

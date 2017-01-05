@@ -7,7 +7,7 @@ import { BlogPostService } from './blog-post.service';
   moduleId: module.id,
   selector: 'blog',
   templateUrl: 'blog.component.html',
-  providers: [BlogPostService]
+  // providers: [BlogPostService]
 })
 export class BlogComponent implements OnInit {
   blogPosts: BlogPost[];

@@ -1,13 +1,13 @@
-export interface BlogPost {
-  id: string;
+export class BlogPost {
+  id: number;
   title: string;
   publishDate: string;
-  labels?: string[];
+  labels: string[];
   content: string;   // can contain html
-  comments?: Comment[];
+  comments: Comment[];
 }
 
-export interface Comment {
+export class Comment {
   body: string;
   author: string;
 }

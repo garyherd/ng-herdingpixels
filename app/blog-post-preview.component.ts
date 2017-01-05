@@ -7,8 +7,11 @@ import { BlogPost } from './blog-post';
   selector: 'blog-post-preview',
   templateUrl: 'blog-post-preview.component.html'
 })
-export class BlogPostPreviewComponent implements OnInit, BlogPost {
-  id: string;
+export class BlogPostPreviewComponent implements OnInit {
+  @Input()
+  id: number;
+
+  contentPreview: string;
 
   @Input()
   title: string;
@@ -16,11 +19,12 @@ export class BlogPostPreviewComponent implements OnInit, BlogPost {
   @Input()
   publishDate: string;
 
-  labels: string[];
-
   @Input()
   content: string;
-  contentPreview: string;
+
+  @Input()
+  labels: string[];
+
 
   constructor() {
     this.content = "";

@@ -2,7 +2,7 @@ import { BlogPost } from './blog-post';
 
 export const POSTS: BlogPost[] = [
   {
-    id: "1",
+    id: 1,
     title: "Blog Post With Text Only",
     publishDate: "6/24/2014",
     labels: ["Small Business"],
@@ -23,11 +23,12 @@ export const POSTS: BlogPost[] = [
     Aenean tincidunt aliquam sapien, in accumsan lorem imperdiet ut. Morbi nulla lacus, aliquet
     quis convallis id, efficitur non turpis. Etiam ultricies rhoncus nibh, non molestie metus.
     Pellentesque mollis magna a ipsum faucibus volutpat. Curabitur convallis aliquam sagittis.</p>
-    `
+    `,
+    comments: []
   },
 
   {
-    id: "2",
+    id: 2,
     title: "Another Blog Post With Text Only",
     publishDate: "12/30/2016",
     labels: ["Javascript", "Websites"],
@@ -48,6 +49,7 @@ export const POSTS: BlogPost[] = [
     Aenean tincidunt aliquam sapien, in accumsan lorem imperdiet ut. Morbi nulla lacus, aliquet
     quis convallis id, efficitur non turpis. Etiam ultricies rhoncus nibh, non molestie metus.
     Pellentesque mollis magna a ipsum faucibus volutpat. Curabitur convallis aliquam sagittis.</p>
-    `
+    `,
+    comments: []
   },
 ];

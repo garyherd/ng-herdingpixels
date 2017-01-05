@@ -10,9 +10,12 @@
 		</form>
 
 		<blog-post-preview *ngFor="let post of blogPosts"
-			[title]="post.title" [publishDate]="post.publishDate" [content]="post.content">
+			[id]="post.id"
+			[title]="post.title"
+			[publishDate]="post.publishDate"
+			[content]="post.content"
+			[labels]="post.labels">
 		</blog-post-preview>
-
 
 		<!-- PAGINATION -->
 		<div class="text-center">
