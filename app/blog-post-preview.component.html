@@ -5,15 +5,19 @@
 							<div class="item-title">
 								<!--<h2><a href="blog-single-sidebar-left.html">{{title}}</a></h2>-->
 								<h2><a [routerLink]="['/post', id]">{{title}}</a></h2>
-								<a href="blog.html" class="label label-default light"><i class="fa fa-dot-circle-o"></i> Business</a>
-								<a href="blog-single-sidebar-left.html#comments" class="scrollTo label label-default light"><i class="fa fa-comment-o"></i> 3 Comments</a>
 								<span class="label label-default light">{{publishDate}}</span>
+								<a href="javascript: window.alert('TODO: Link to comments on blog')" class="scrollTo label label-default light"><i class="fa fa-comment-o"></i> 3 Comments</a>
+								<a class="label label-default light" href="#" *ngFor="let label of labels"><i class="fa fa-tags"></i> {{label}}</a>
 							</div>
 
+							<!-- TAGS -->
+
+
+
  							<!-- image -->
-							<figure>
+							<!--<figure>
 								<img src="assets/images/blog.jpg" class="img-responsive" alt="img" />
-							</figure>
+							</figure>-->
 
 							<!-- blog short preview -->
 							<p>
@@ -21,7 +25,7 @@
 							</p>
 
 							<!-- read more button -->
-							<a href="blog-single-sidebar-left.html" class="btn btn-xs"><i class="fa fa-sign-out"></i> READ MORE</a>
+							<a [routerLink]="['/post', id]" class="btn btn-xs"><i class="fa fa-sign-out"></i> READ MORE</a>
 
 						</div>
 						<!-- /blog item -->
