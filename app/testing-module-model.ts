@@ -3,6 +3,8 @@ import { HeroComponent } from './hero.component';
 import { TopNavComponent } from './top-nav.component';
 import { PageFooterComponent } from './page-footer.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { BlogComponent } from './blog.component';
 import { BlogPostPreviewComponent } from './blog-post-preview.component';
@@ -27,6 +29,6 @@ export var TestModuleSetting = {
             ContactUsComponent,
             BlogPostFullComponent
       ],
-      imports: [AppRoutingModule],
+      imports: [AppRoutingModule, HttpModule],
       providers: [{provide: APP_BASE_HREF, useValue : '/' }, BlogPostService]
 };

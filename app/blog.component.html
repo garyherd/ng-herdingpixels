@@ -9,10 +9,10 @@
 			</span>
 		</form>
 
-		<blog-post-preview *ngFor="let post of blogPosts"
+		<blog-post-preview *ngFor="let post of bloggerPosts"
 			[id]="post.id"
 			[title]="post.title"
-			[publishDate]="post.publishDate"
+			[publishDate]="post.published"
 			[content]="post.content"
 			[labels]="post.labels">
 		</blog-post-preview>

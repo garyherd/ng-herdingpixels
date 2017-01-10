@@ -13,11 +13,7 @@ import 'rxjs/add/operator/switchMap';
   templateUrl: 'blog-post-full.component.html'
 })
 export class BlogPostFullComponent implements OnInit {
-  // @Input()
-  // id: number;
 
-  // @Input()
-  // title: string;
   @Input()
   blogPost: BlogPost;
 

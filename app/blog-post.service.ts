@@ -1,14 +1,101 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 
-import { BlogPost } from './blog-post';
+import { BlogPost, TestPost, BloggerPost, BloggerPostsList } from './blog-post';
 import { POSTS } from './mock-posts';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/observable/throw';
+
+
 
 @Injectable()
 export class BlogPostService {
-  getPosts(): Promise<BlogPost[]> {
+  blogPosts: BlogPost[];
+  bloggerApiUrl = 'https://www.googleapis.com/blogger/v3/blogs/3297912488498445473/posts?key=AIzaSyClD4hLHhuXNDHvOJFzzoJqLje_VDaFTAQ';
+
+
+  constructor(private http: Http) {
+  }
+
+  getPosts(): Observable<BloggerPost[]> {
+    return this.http.get(this.bloggerApiUrl)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+
+  getMockPosts(): Promise<BlogPost[]> {
     return Promise.resolve(POSTS);
   }
+
+
   getPost(id: number): Promise<BlogPost> {
-    return this.getPosts().then(posts => posts.find(post => post.id === id));
+    return this.getMockPosts().then(posts => posts.find(post => post.id === id));
   }
+
+  simpleGetPosts(): TestPost[] {
+    var testPosts : TestPost[] = [];
+    this.http.get('https://jsonplaceholder.typicode.com/posts')
+      .map(res => res.json())
+      .subscribe(posts => testPosts.push(posts));
+    return testPosts;
+  }
+
+  private extractData(res: Response) {
+    let body = res.json();
+    return body.items || { };
+  }
+
+   private handleError (error: Response | any) {
+   // In a real world app, we might use a remote logging infrastructure
+     let errMsg: string;
+     if (error instanceof Response) {
+       const body = error.json() || '';
+       const err = body.error || JSON.stringify(body);
+       errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+     } else {
+         errMsg = error.message ? error.message : error.toString();
+     }
+     console.error(errMsg);
+     return Observable.throw(errMsg);
+   }
 }
+
+
+// interface BloggerPostsList {
+//   kind?: string;
+//   items: BloggerPost[];
+//   etag?: string;
+// }
+
+// interface BloggerPost {
+//   kind?: string;
+//   id: string;
+//   blog?: {
+//     id: string;
+//   };
+//   published?: string;
+//   updated?: string;
+//   etag?: string;
+//   url?: string;
+//   selfLink?: string;
+//   title: string;
+//   content: string;
+//   author?: {
+//     id: string;
+//     displayName: string;
+//     url: string;
+//     image: {
+//       url: string;
+//     }
+//   };
+//   replies?: {
+//     totalItems: string;
+//     selfLink: string;
+//   }
+//   labels?: string[];
+// }
+

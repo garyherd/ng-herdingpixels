@@ -1,8 +1,8 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { TopNavComponent } from './top-nav.component';
@@ -20,7 +20,8 @@ import { BlogPostFullComponent } from './blog-post-full.component';
 @NgModule({
   imports:  [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
