@@ -25,6 +25,9 @@ export class BlogPostPreviewComponent implements OnInit {
   @Input()
   labels: string[];
 
+  @Input()
+  commentCount: string;
+
 
   constructor() {
     this.content = "";
@@ -35,6 +38,12 @@ export class BlogPostPreviewComponent implements OnInit {
   }
 
   getPreviewParagraph(): void {
-    this.contentPreview = this.content.replace(/<p>/g, "").replace(/<\/p>/g, "") + " ...";
+    let splitStr = "name='more'";
+
+    if (this.content.replace(/<p>/g, "").replace(/<\/p>/g, "").search(splitStr) === -1) {
+      this.contentPreview =  this.content;
+    } else {
+      this.contentPreview = this.content.replace(/<p>/g, "").replace(/<\/p>/g, "").split(splitStr)[0];
+    }
   }
 }

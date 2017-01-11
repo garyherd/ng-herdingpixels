@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { BlogPost } from './blog-post';
+import { BloggerPost } from './blog-post';
 import { BlogPostService } from './blog-post.service';
 
 import 'rxjs/add/operator/switchMap';
@@ -15,7 +15,7 @@ import 'rxjs/add/operator/switchMap';
 export class BlogPostFullComponent implements OnInit {
 
   @Input()
-  blogPost: BlogPost;
+  blogPost: BloggerPost;
 
   constructor(
     private blogPostService: BlogPostService,
@@ -25,7 +25,7 @@ export class BlogPostFullComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.blogPostService.getPost(+params['id']))
+      .switchMap((params: Params) => this.blogPostService.getPost(params['id']))
       .subscribe(post => this.blogPost = post);
   }
 }

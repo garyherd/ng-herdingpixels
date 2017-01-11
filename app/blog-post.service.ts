@@ -15,39 +15,48 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class BlogPostService {
   blogPosts: BlogPost[];
-  bloggerApiUrl = 'https://www.googleapis.com/blogger/v3/blogs/3297912488498445473/posts?key=AIzaSyClD4hLHhuXNDHvOJFzzoJqLje_VDaFTAQ';
+  private API_KEY: string = "AIzaSyClD4hLHhuXNDHvOJFzzoJqLje_VDaFTAQ";
+  private BLOG_ID: string = "3297912488498445473";
+  private templateUrlAllPosts: string = 'https://www.googleapis.com/blogger/v3/blogs/blogId/posts?key=YOUR-API-KEY';
+  private templateUrlPost: string = 'https://www.googleapis.com/blogger/v3/blogs/blogId/posts/postId?key=YOUR-API-KEY'
 
 
   constructor(private http: Http) {
   }
 
   getPosts(): Observable<BloggerPost[]> {
-    return this.http.get(this.bloggerApiUrl)
+    return this.http.get(this.createGetAllPostsUrl())
                     .map(this.extractData)
                     .catch(this.handleError);
   }
 
-  getMockPosts(): Promise<BlogPost[]> {
-    return Promise.resolve(POSTS);
+  getPost(id: number): Observable<BloggerPost> {
+    return this.http.get(this.createGetPostUrl(id.toString()))
+                    .map(this.extractDataNonArray)
+                    .catch(this.handleError);
   }
 
 
-  getPost(id: number): Promise<BlogPost> {
-    return this.getMockPosts().then(posts => posts.find(post => post.id === id));
+  private createGetAllPostsUrl(): string {
+    let newUrl = this.templateUrlAllPosts.replace("blogId", this.BLOG_ID).replace("YOUR-API-KEY", this.API_KEY);
+    return newUrl;
   }
 
-  simpleGetPosts(): TestPost[] {
-    var testPosts : TestPost[] = [];
-    this.http.get('https://jsonplaceholder.typicode.com/posts')
-      .map(res => res.json())
-      .subscribe(posts => testPosts.push(posts));
-    return testPosts;
+  private createGetPostUrl(id: string): string {
+    let newUrl = this.templateUrlPost.replace("blogId", this.BLOG_ID).replace("postId", id).replace("YOUR-API-KEY", this.API_KEY);
+    return newUrl
   }
 
   private extractData(res: Response) {
     let body = res.json();
     return body.items || { };
   }
+
+  private extractDataNonArray(res: Response) {
+    let body = res.json();
+    return body || { };
+  }
+
 
    private handleError (error: Response | any) {
    // In a real world app, we might use a remote logging infrastructure

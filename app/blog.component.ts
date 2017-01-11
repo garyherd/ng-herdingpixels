@@ -17,10 +17,6 @@ export class BlogComponent implements OnInit {
   constructor(private blogPostService: BlogPostService) {
   }
 
-  getMockPosts(): void {
-    this.blogPostService.getMockPosts().then(posts => this.mockBlogPosts = posts);
-  }
-
   getPosts(): void {
     this.blogPostService.getPosts().subscribe(
                                       posts => this.bloggerPosts = posts,
@@ -28,7 +24,6 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getMockPosts();
     this.getPosts();
   }
 }
