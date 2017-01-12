@@ -7,11 +7,6 @@ export class BlogPost {
   comments: Comment[];
 }
 
-export class Comment {
-  body: string;
-  author: string;
-}
-
 export interface TestPost {
   id: number;
   title: string;
@@ -50,4 +45,34 @@ export interface BloggerPost {
     selfLink: string;
   }
   labels?: string[];
+}
+
+export interface CommentList {
+  kind: string;
+  nextPageToken: string;
+  prevPageToken: string;
+  items: Comment[];
+}
+
+export interface Comment {
+  kind: string;
+  id: string;
+  post: {
+    id: string;
+  };
+  blog: {
+    id: string;
+  };
+  published: string;
+  updated: string;
+  selfLink: string;
+  content: string;
+  author: {
+    id: string;
+    displayName: string;
+    url: string;
+    image: {
+      url: string;
+    };
+  }
 }
