@@ -15,6 +15,7 @@ import { PricingComponent } from './pricing.component';
 import { ContactUsComponent } from './contact-us.component';
 import { BlogPostService } from './blog-post.service';
 import { BlogPostFullComponent } from './blog-post-full.component';
+import { BlogPostCommentsComponent } from './blog-post-comments.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { BlogPostFullComponent } from './blog-post-full.component';
     AboutComponent,
     PricingComponent,
     ContactUsComponent,
-    BlogPostFullComponent
+    BlogPostFullComponent,
+    BlogPostCommentsComponent
   ],
   providers: [BlogPostService],
   bootstrap:    [ AppComponent ]
