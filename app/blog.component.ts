@@ -12,7 +12,7 @@ import { BlogPostService } from './blog-post.service';
 export class BlogComponent implements OnInit {
   mockBlogPosts: BlogPost[];
   errorMessage: string;
-  bloggerPosts: BloggerPost[];
+  bloggerPosts: BloggerPost[] = [];
 
   constructor(private blogPostService: BlogPostService) {
   }

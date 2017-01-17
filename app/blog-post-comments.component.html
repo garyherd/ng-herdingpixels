@@ -1,5 +1,5 @@
 <!-- comment item -->
-<div class="comment">
+<div class="comment" *ngFor="let comment of comments">
 
   <!-- user-avatar -->
   <span class="user-avatar">
@@ -8,24 +8,8 @@
 
   <div class="media-body">
     <a href="#commentForm" class="scrollTo replyBtn">reply</a>
-    <h4 class="media-heading bold">Melissa Doe</h4>
-    <small class="block">June 29, 2014 - 11:23</small>
-    Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-    <!-- comment reply -->
-    <div class="media">
-
-      <!-- user-avatar -->
-      <span class="user-avatar">
-        <img class="media-object" src="assets/images/avatar.png" width="64" height="64" alt="">
-      </span>
-
-      <div class="media-body">
-        <h4 class="media-heading bold">Peter Doe</h4>
-        <small class="block">June 29, 2014 - 11:23</small>
-        Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </div>
-    </div>
-
+    <h4 class="media-heading bold">{{comment.author.displayName}}</h4>
+    <small class="block">{{comment.published}}</small>
+    <div [innerHtml]="comment.content"></div>
   </div>
 </div>

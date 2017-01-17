@@ -48,31 +48,31 @@ export interface BloggerPost {
 }
 
 export interface CommentList {
-  kind: string;
-  nextPageToken: string;
-  prevPageToken: string;
-  items: Comment[];
+  kind?: string;
+  nextPageToken?: string;
+  prevPageToken?: string;
+  items?: Comment[];
 }
 
 export interface Comment {
-  kind: string;
-  id: string;
-  post: {
-    id: string;
+  kind?: string;
+  id?: string;
+  post?: {
+    id?: string;
   };
-  blog: {
-    id: string;
+  blog?: {
+    id?: string;
   };
-  published: string;
-  updated: string;
-  selfLink: string;
+  published?: string;
+  updated?: string;
+  selfLink?: string;
   content: string;
-  author: {
-    id: string;
-    displayName: string;
-    url: string;
-    image: {
-      url: string;
+  author?: {
+    id?: string;
+    displayName?: string;
+    url?: string;
+    image?: {
+      url?: string;
     };
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
-import { BlogPost, TestPost, BloggerPost, BloggerPostsList } from './blog-post';
+import { BlogPost, TestPost, BloggerPost, BloggerPostsList, CommentList, Comment } from './blog-post';
 import { POSTS } from './mock-posts';
 
 import { Observable } from 'rxjs/Observable';
@@ -18,7 +18,8 @@ export class BlogPostService {
   private API_KEY: string = "AIzaSyClD4hLHhuXNDHvOJFzzoJqLje_VDaFTAQ";
   private BLOG_ID: string = "3297912488498445473";
   private templateUrlAllPosts: string = 'https://www.googleapis.com/blogger/v3/blogs/blogId/posts?key=YOUR-API-KEY';
-  private templateUrlPost: string = 'https://www.googleapis.com/blogger/v3/blogs/blogId/posts/postId?key=YOUR-API-KEY'
+  private templateUrlPost: string = 'https://www.googleapis.com/blogger/v3/blogs/blogId/posts/postId?key=YOUR-API-KEY';
+  private templateUrlComments: string = 'https://www.googleapis.com/blogger/v3/blogs/blogId/posts/postId/comments?key=YOUR-API-KEY';
 
 
   constructor(private http: Http) {
@@ -36,6 +37,12 @@ export class BlogPostService {
                     .catch(this.handleError);
   }
 
+  getComments(id: string): Observable<Comment[]> {
+    return this.http.get(this.createGetCommentsUrl(id))
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+
 
   private createGetAllPostsUrl(): string {
     let newUrl = this.templateUrlAllPosts.replace("blogId", this.BLOG_ID).replace("YOUR-API-KEY", this.API_KEY);
@@ -44,7 +51,12 @@ export class BlogPostService {
 
   private createGetPostUrl(id: string): string {
     let newUrl = this.templateUrlPost.replace("blogId", this.BLOG_ID).replace("postId", id).replace("YOUR-API-KEY", this.API_KEY);
-    return newUrl
+    return newUrl;
+  }
+
+  private createGetCommentsUrl(id: string): string {
+    let newUrl = this.templateUrlComments.replace("blogId", this.BLOG_ID).replace("postId", id).replace("YOUR-API-KEY", this.API_KEY);
+    return newUrl;
   }
 
   private extractData(res: Response) {

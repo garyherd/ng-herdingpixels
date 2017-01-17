@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { BloggerPost } from './blog-post';
+import { BloggerPost, CommentList } from './blog-post';
 import { BlogPostService } from './blog-post.service';
 
 import 'rxjs/add/operator/switchMap';
@@ -27,5 +27,11 @@ export class BlogPostFullComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.blogPostService.getPost(params['id']))
       .subscribe(post => this.blogPost = post);
+
+    // this.comments = this.blogPostService.getComments();
+  }
+
+  getTotalComments(): number {
+    return parseInt(this.blogPost.replies.totalItems);
   }
 }

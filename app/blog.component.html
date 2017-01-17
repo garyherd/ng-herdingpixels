@@ -8,16 +8,16 @@
 				<button class="btn btn-primary"><i class="fa fa-search"></i></button>
 			</span>
 		</form>
-
-		<blog-post-preview *ngFor="let post of bloggerPosts"
-			[id]="post.id"
-			[title]="post.title"
-			[publishDate]="post.published"
-			[content]="post.content"
-			[labels]="post.labels"
-			[commentCount]="post.replies.totalItems">
-		</blog-post-preview>
-
+		<!--<div *ngIf="bloggerPosts.length">-->
+			<blog-post-preview *ngFor="let post of bloggerPosts"
+				[id]="post.id"
+				[title]="post.title"
+				[publishDate]="post.published"
+				[content]="post.content"
+				[labels]="post.labels"
+				[commentCount]="post.replies.totalItems">
+			</blog-post-preview>
+		<!--</div>-->
 	</section>
 
 </div>

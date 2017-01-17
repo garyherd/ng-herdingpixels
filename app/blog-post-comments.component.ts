@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { CommentList } from './blog-post';
+import { CommentList, Comment } from './blog-post';
+import { BlogPostService } from './blog-post.service';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +11,24 @@ import { CommentList } from './blog-post';
 export class BlogPostCommentsComponent implements OnInit {
 
   @Input()
-  comments: CommentList;
+  postId: string;
 
-  constructor() { }
+  comments: Comment[] = [];
+  errorMessage: string;
 
-  ngOnInit() { }
+  constructor(private blogPostService: BlogPostService) { }
+
+  ngOnInit() {
+    this.getComments();
+  }
+
+  getComments(): void {
+  this.blogPostService.getComments(this.postId).subscribe(
+                                    comments => this.comments = comments,
+                                      error => this.errorMessage = <any>error);
+  }
+
+  convertToInt(str: string): number {
+    return parseInt(str);
+  }
 }

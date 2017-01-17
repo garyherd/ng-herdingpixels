@@ -17,7 +17,7 @@
 
 
 		<!-- article content -->
-		<article [innerHTML]="blogPost.content">  <!-- XSS issue here? -->
+		<article [innerHTML]="blogPost.content">
 			<!--<p class="dropcap">Aliquam fringilla, sapien eget scelerisque placerat, lorem libero cursus lorem, sed sodales lorem libero eu sapien. Nunc mattis feugiat justo vel faucibus. Nulla consequat feugiat malesuada. Ut justo nulla, <strong>facilisis vel molestie id</strong>, dictum ut arcu. Nunc ipsum nulla, eleifend non blandit quis, luctus quis orci. Cras blandit turpis mattis nulla ultrices interdum. Mauris pretium pretium dictum. Nunc commodo, felis sed dictum bibendum, risus justo iaculis dui, nec euismod orci sem eget neque. Donec in metus metus, vitae eleifend lorem. Ut vestibulum gravida venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque suscipit tincidunt magna non mollis. Fusce tempus tincidunt nisi, in luctus elit pellentesque quis. Sed velit mi, ullamcorper ut tempor ut, mattis eu lacus. Morbi rhoncus aliquet tellus, id accumsan enim sollicitudin vitae.</p>
 			<p>Vivamus <a href="#">magna justo</a>, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Nulla porttitor accumsan tincidunt.</p>-->
 
@@ -56,71 +56,9 @@
 		<!-- COMMENTS -->
 		<div id="comments">
 			<h2>{{blogPost.replies.totalItems}} Comments</h2>
-
-			<!-- comment item -->
-			<div class="comment">
-
-				<!-- user-avatar -->
-				<span class="user-avatar">
-					<img class="pull-left media-object" src="assets/images/avatar.png" width="64" height="64" alt="">
-				</span>
-
-				<div class="media-body">
-					<a href="#commentForm" class="scrollTo replyBtn">reply</a>
-					<h4 class="media-heading bold">John Doe</h4>
-					<small class="block">June 29, 2014 - 11:23</small>
-					Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</div>
+			<div *ngIf="getTotalComments() > 0">
+				<blog-post-comments [postId]="blogPost.id" ></blog-post-comments>
 			</div>
-
-			<!-- comment item -->
-			<div class="comment">
-
-				<!-- user-avatar -->
-				<span class="user-avatar">
-					<img class="pull-left media-object" src="assets/images/avatar.png" width="64" height="64" alt="">
-				</span>
-
-				<div class="media-body">
-					<a href="#commentForm" class="scrollTo replyBtn">reply</a>
-					<h4 class="media-heading bold">Diana Doe</h4>
-					<small class="block">June 29, 2014 - 11:23</small>
-					Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</div>
-			</div>
-
-			<!-- comment item -->
-			<div class="comment">
-
-				<!-- user-avatar -->
-				<span class="user-avatar">
-					<img class="media-object" src="assets/images/avatar.png" width="64" height="64" alt="">
-				</span>
-
-				<div class="media-body">
-					<a href="#commentForm" class="scrollTo replyBtn">reply</a>
-					<h4 class="media-heading bold">Melissa Doe</h4>
-					<small class="block">June 29, 2014 - 11:23</small>
-					Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-					<!-- comment reply -->
-					<div class="media">
-
-						<!-- user-avatar -->
-						<span class="user-avatar">
-							<img class="media-object" src="assets/images/avatar.png" width="64" height="64" alt="">
-						</span>
-
-						<div class="media-body">
-							<h4 class="media-heading bold">Peter Doe</h4>
-							<small class="block">June 29, 2014 - 11:23</small>
-							Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</div>
-					</div>
-
-				</div>
-			</div>
-
 			<hr />
 
 			<h4>
@@ -132,43 +70,10 @@
 			<form id="commentForm" class="form-horizontal" method="post" action="#">
 				<div class="row">
 
-					<!-- name -->
-					<div class="col-md-4">
-						<label>Name *</label>
-						<input required class="form-control input-lg" type="text" name="author" id="author" value="" />
-					</div>
-
-					<!-- email -->
-					<div class="col-md-4">
-						<label>Email *</label>
-						<input required class="form-control input-lg" type="text" name="email" id="email" value="" />
-					</div>
-
-					<!-- website -->
-					<div class="col-md-4">
-						<label>Website</label>
-						<input class="form-control input-lg" type="text" name="url" id="url" value="" />
-					</div>
-
-				</div>
-
-				<div class="row">
-
-					<!-- comment -->
-					<div class="col-md-12">
-						<textarea required class="form-control input-lg" id="comment" name="comment" rows="5" placeholder="Your Comment *"></textarea>
-					</div><br />
-
-					<!-- code info -->
-					<div class="col-md-12 font300 fsize14">
-						<p>Allowed HTML tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </p>
-						<p>Inappropriate and irrelevant comments will be removed at an admin's discretion.<br /> Your email is used for verification purposes only, it will never be shared.</p>
-					</div>
-
 					<!-- btn -->
 					<div class="col-md-12">
 						<p>
-							<button class="btn btn-primary">Post Comment</button>
+							<a href={{blogPost.url}} class="btn btn-primary" target='_blank'>Post Comment on Blogger</a>
 						</p>
 					</div>
 
