@@ -7,7 +7,7 @@
   </span>
 
   <div class="media-body">
-    <a href="#commentForm" class="scrollTo replyBtn">reply</a>
+    <a href={{postUrl}} class="scrollTo replyBtn" target='_blank'>reply</a>
     <h4 class="media-heading bold">{{comment.author.displayName}}</h4>
     <small class="block">{{comment.published}}</small>
     <div [innerHtml]="comment.content"></div>

@@ -43,19 +43,30 @@ export class BlogPostService {
                     .catch(this.handleError);
   }
 
+  getPostsByTag(id: string): Observable<BloggerPost[]> {
+    return;
+  }
+
 
   private createGetAllPostsUrl(): string {
-    let newUrl = this.templateUrlAllPosts.replace("blogId", this.BLOG_ID).replace("YOUR-API-KEY", this.API_KEY);
-    return newUrl;
+    return this.templateUrlAllPosts.replace("blogId", this.BLOG_ID)
+                                   .replace("YOUR-API-KEY", this.API_KEY);
   }
 
   private createGetPostUrl(id: string): string {
-    let newUrl = this.templateUrlPost.replace("blogId", this.BLOG_ID).replace("postId", id).replace("YOUR-API-KEY", this.API_KEY);
-    return newUrl;
+    return this.templateUrlPost.replace("blogId", this.BLOG_ID)
+                               .replace("postId", id)
+                               .replace("YOUR-API-KEY", this.API_KEY);
   }
 
   private createGetCommentsUrl(id: string): string {
-    let newUrl = this.templateUrlComments.replace("blogId", this.BLOG_ID).replace("postId", id).replace("YOUR-API-KEY", this.API_KEY);
+    return this.templateUrlComments.replace("blogId", this.BLOG_ID)
+                                   .replace("postId", id)
+                                   .replace("YOUR-API-KEY", this.API_KEY);
+  }
+
+  private createSearchPostsUrl(id: string): string {
+    let newUrl = "";
     return newUrl;
   }
 

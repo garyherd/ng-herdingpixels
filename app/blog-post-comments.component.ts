@@ -13,6 +13,9 @@ export class BlogPostCommentsComponent implements OnInit {
   @Input()
   postId: string;
 
+  @Input()
+  postUrl: string;
+
   comments: Comment[] = [];
   errorMessage: string;
 
@@ -26,9 +29,5 @@ export class BlogPostCommentsComponent implements OnInit {
   this.blogPostService.getComments(this.postId).subscribe(
                                     comments => this.comments = comments,
                                       error => this.errorMessage = <any>error);
-  }
-
-  convertToInt(str: string): number {
-    return parseInt(str);
   }
 }
