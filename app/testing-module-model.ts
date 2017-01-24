@@ -17,6 +17,8 @@ import { BlogPostCommentsComponent } from './blog-post-comments.component';
 
 import {APP_BASE_HREF} from '@angular/common';
 
+import * as moment from 'moment';
+
 export var TestModuleSetting = {
       declarations: [
             AppComponent,

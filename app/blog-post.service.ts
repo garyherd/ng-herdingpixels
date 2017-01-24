@@ -10,8 +10,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/throw';
 
-
-
 @Injectable()
 export class BlogPostService {
   blogPosts: BlogPost[];
@@ -46,7 +44,6 @@ export class BlogPostService {
   getPostsByTag(id: string): Observable<BloggerPost[]> {
     return;
   }
-
 
   private createGetAllPostsUrl(): string {
     return this.templateUrlAllPosts.replace("blogId", this.BLOG_ID)

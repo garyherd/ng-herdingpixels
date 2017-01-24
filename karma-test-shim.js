@@ -49,6 +49,7 @@ System.config({
     '@angular/http/testing': 'npm:@angular/http/bundles/http-testing.umd.js',
     '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
     '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',
+    'moment': 'npm:moment/moment.js'
   },
 });
 
@@ -71,7 +72,7 @@ function importSystemJsExtras(){
 function initTestBed(){
   return Promise.all([
     System.import('@angular/core/testing'),
-    System.import('@angular/platform-browser-dynamic/testing')
+    System.import('@angular/platform-browser-dynamic/testing'),
   ])
 
   .then(function (providers) {

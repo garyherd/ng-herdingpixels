@@ -55,13 +55,13 @@ export interface CommentList {
 }
 
 export interface Comment {
-  kind?: string;
-  id?: string;
-  post?: {
-    id?: string;
+  kind: string;
+  id: string;
+  post: {
+    id: string;
   };
-  blog?: {
-    id?: string;
+  blog: {
+    id: string;
   };
   published?: string;
   updated?: string;
@@ -75,4 +75,7 @@ export interface Comment {
       url?: string;
     };
   }
+  inReplyTo?: {
+    id?: string;
+  };
 }

@@ -7,9 +7,27 @@
   </span>
 
   <div class="media-body">
-    <a href={{postUrl}} class="scrollTo replyBtn" target='_blank'>reply</a>
+    <a href={{postUrl}} class="scrollTo replyBtn" target='_blank' >reply</a>
     <h4 class="media-heading bold">{{comment.author.displayName}}</h4>
-    <small class="block">{{comment.published}}</small>
+    <small class="block">{{formatDate(comment.published)}}</small>
     <div [innerHtml]="comment.content"></div>
+
+    <div *ngIf="getRepliesByCommentId(comment.id).length > 0">
+      <!-- comment reply -->
+      <div class="media" *ngFor="let reply of getRepliesByCommentId(comment.id)" style="margin-top: 15px">
+
+        <!-- user-avatar -->
+        <span class="user-avatar">
+          <img class="media-object" src="assets/images/avatar.png" width="64" height="64" alt="">
+        </span>
+
+        <div class="media-body">
+          <h4 class="media-heading bold">{{reply.author.displayName}}</h4>
+          <small class="block">{{formatDate(reply.published)}}</small>
+          <div [innerHtml]="reply.content"></div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
