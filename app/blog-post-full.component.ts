@@ -41,4 +41,8 @@ export class BlogPostFullComponent implements OnInit {
       if (element) element.scrollIntoView(element);
     });
   }
+
+  formatDate(dateStr: string): string {
+    return this.blogPostService.formatDate(dateStr);
+  }
 }

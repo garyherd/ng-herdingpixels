@@ -39,6 +39,7 @@
         defaultExtension: 'js'
       },
       moment: {
+        main: './moment.js',
         defaultExtension: 'js'
       }
     }

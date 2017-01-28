@@ -57,6 +57,7 @@ module.exports = function(config) {
       // Angular itself
       { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
+      { pattern: 'node_modules/moment/moment.js', inclueded: false, watched: false },
 
       { pattern: 'systemjs.config.js', included: false, watched: false },
       { pattern: 'systemjs.config.extras.js', included: false, watched: false },
@@ -82,7 +83,8 @@ module.exports = function(config) {
     // Proxied base paths for loading assets
     proxies: {
       // required for component assets fetched by Angular's compiler
-      "/app/": appAssets
+      "/app/": appAssets,
+      '/base/moment.js': '/base/node_modules/moment/moment.js'
     },
 
     exclude: [],

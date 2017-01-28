@@ -58,13 +58,7 @@ export class BlogPostCommentsComponent implements OnInit {
     });
   }
 
-  formatDate(dateStr: string): any {
-    let newDate: any = moment(dateStr).format('MMM Do, YYYY - h:mm a');
-
-    if (newDate === "Invalid date") {
-      return "Date unknown";
-    } else {
-      return newDate;
-    }
+  formatDate(dateStr: string): string {
+    return this.blogPostService.formatDate(dateStr);
   }
 }

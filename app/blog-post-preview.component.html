@@ -5,7 +5,7 @@
 							<div class="item-title">
 								<!--<h2><a href="blog-single-sidebar-left.html">{{title}}</a></h2>-->
 								<h2><a [routerLink]="['/post', id]">{{title}}</a></h2>
-								<span class="label label-default light">{{publishDate}}</span>
+								<span class="label label-default light">{{formatDate(publishDate)}}</span>
 								<a href="javascript: window.alert('TODO: Link to comments on blog')" class="scrollTo label label-default light"><i class="fa fa-comment-o"></i> {{commentCount}} Comments</a>
 								<a class="label label-default light" href="#" *ngFor="let label of labels"><i class="fa fa-tags"></i> {{label}}</a>
 							</div>

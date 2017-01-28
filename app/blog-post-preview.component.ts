@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 import { BlogPost } from './blog-post';
+import { BlogPostService } from './blog-post.service'
 
 @Component({
   moduleId: module.id,
@@ -8,6 +9,7 @@ import { BlogPost } from './blog-post';
   templateUrl: 'blog-post-preview.component.html'
 })
 export class BlogPostPreviewComponent implements OnInit {
+
   @Input()
   id: number;
 
@@ -29,7 +31,7 @@ export class BlogPostPreviewComponent implements OnInit {
   commentCount: string;
 
 
-  constructor() {
+  constructor(private blogPostService: BlogPostService) {
     this.content = "";
   }
 
@@ -45,5 +47,9 @@ export class BlogPostPreviewComponent implements OnInit {
     } else {
       this.contentPreview = this.content.replace(/<p>/g, "").replace(/<\/p>/g, "").split(splitStr)[0];
     }
+  }
+
+  formatDate(dateStr: string): string {
+    return this.blogPostService.formatDate(dateStr);
   }
 }

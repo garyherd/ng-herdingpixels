@@ -10,6 +10,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/throw';
 
+import * as moment from 'moment/moment';
+
 @Injectable()
 export class BlogPostService {
   blogPosts: BlogPost[];
@@ -43,6 +45,19 @@ export class BlogPostService {
 
   getPostsByTag(id: string): Observable<BloggerPost[]> {
     return;
+  }
+
+  formatDate(dateStr: string): string {
+    // console.log(dateStr);
+    // console.log(moment(dateStr).isValid());
+    // console.log(moment(dateStr).parsingFlags());
+    let newDate: any = moment(dateStr, moment.ISO_8601).format('MMM Do, YYYY - h:mm a');
+
+    if (newDate === "Invalid date") {
+      return "Date unknown";
+    } else {
+      return newDate;
+    }
   }
 
   private createGetAllPostsUrl(): string {
