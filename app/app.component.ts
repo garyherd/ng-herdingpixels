@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
     <top-nav></top-nav>
-    <audit-request-form></audit-request-form>
     <!-- WRAPPER -->
     <div id="wrapper">
       <router-outlet></router-outlet>

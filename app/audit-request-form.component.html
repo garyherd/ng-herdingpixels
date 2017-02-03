@@ -1,6 +1,4 @@
 <!-- FORM -->
-<div class="col-md-5 col-md-offset-1">
-
   <h2 class="text-center">Request your&nbsp;<strong><em>free</em></strong>&nbsp;website audit today!</h2>
 
   <!--
@@ -23,6 +21,7 @@
 
   <form id="auditForm" class="white-row" action="php/contact.php" method="post">
     <div class="row">
+      {{diagnostic}}
       <!--<div class="">-->
         <div class="form-group col-md-12">
           <label>Name *</label>
@@ -38,7 +37,7 @@
         <div class="form-group col-md-12">
           <label>URL*</label>
           <input type="url" value="" placeholder="include the http://" maxlength="100" class="form-control"
-          name="audit_url" id="audit_url" required [(ngModel)]="requestInfo.url">
+          name="audit_url" id="audit_url" required [(ngModel)]="requestInfo.url"    >
         </div>
       <!--</div>-->
     </div>
@@ -62,5 +61,5 @@
     </div>
   </form>
 
-</div><br>
+
 <!-- /FORM -->

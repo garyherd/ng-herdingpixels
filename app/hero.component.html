@@ -14,64 +14,7 @@
 
 			<!-- FORM -->
 			<div class="col-md-5 col-md-offset-1">
-
-				<h2 class="text-center">Request your&nbsp;<strong><em>free</em></strong>&nbsp;website audit today!</h2>
-
-				<!--
-					if you want to use your own contact script, remove .hide class
-				-->
-
-				<!-- SENT OK -->
-				<div id="audit_sent_ok_" class="alert alert-success fade in fsize16 hide">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Thank You!</strong> Your message successfully sent!
-				</div>
-				<!-- /SENT OK -->
-
-				<!-- SENT FAILED -->
-				<div id="audit_sent_error_" class="alert alert-danger fade in fsize16 hide">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Message not sent!</strong>
-				</div>
-				<!-- /SENT FAILED -->
-
-				<form id="auditForm" class="white-row" action="php/contact.php" method="post">
-					<div class="row">
-						<!--<div class="">-->
-							<div class="form-group col-md-12">
-								<label>Name *</label>
-								<input type="text" value="" maxlength="100" class="form-control" name="audit_name" id="audit_name" required>
-							</div>
-							<div class="form-group col-md-12">
-								<label>E-mail*</label>
-								<input type="email" value="" maxlength="100" class="form-control" name="audit_email" id="audit_email" required>
-							</div>
-							<div class="form-group col-md-12">
-								<label>URL*</label>
-								<input type="url" value=""  placeholder = "include the http://" maxlength="100" class="form-control" name="audit_url" id="audit_url" required>
-							</div>
-						<!--</div>-->
-					</div>
-
-					<br />
-
-					<div class="row">
-						<div class="form-group">
-							<div class="col-md-12">
-								<div class="g-recaptcha" data-sitekey="6LdpdwwUAAAAAMAKb1xXxGpBoh9V6YFgGDKpI4mg"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="form-group">
-							<div class="col-md-12">
-								<input id="contact_submit" type="submit" value="Get Free Website Audit" class="btn btn-primary btn-lg" data-loading-text="Loading...">
-							</div>
-						</div>
-					</div>
-				</form>
-
+				<audit-request-form></audit-request-form>
 			</div><br>
 			<!-- /FORM -->
 		</div>
