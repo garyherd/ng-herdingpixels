@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { TopNavComponent } from './top-nav.component';
@@ -16,13 +17,15 @@ import { ContactUsComponent } from './contact-us.component';
 import { BlogPostService } from './blog-post.service';
 import { BlogPostFullComponent } from './blog-post-full.component';
 import { BlogPostCommentsComponent } from './blog-post-comments.component';
+import { AuditRequestFormComponent } from './audit-request-form.component';
 
 
 @NgModule({
   imports:  [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -35,7 +38,8 @@ import { BlogPostCommentsComponent } from './blog-post-comments.component';
     PricingComponent,
     ContactUsComponent,
     BlogPostFullComponent,
-    BlogPostCommentsComponent
+    BlogPostCommentsComponent,
+    AuditRequestFormComponent
   ],
   providers: [BlogPostService],
   bootstrap:    [ AppComponent ]

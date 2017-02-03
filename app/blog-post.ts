@@ -79,3 +79,9 @@ export interface Comment {
     id?: string;
   };
 }
+
+export interface AuditRequestInfo {
+  name?: string;
+  email?: string;
+  url?: string;
+}
