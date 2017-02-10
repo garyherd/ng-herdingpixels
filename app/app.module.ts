@@ -18,6 +18,7 @@ import { BlogPostService } from './blog-post.service';
 import { BlogPostFullComponent } from './blog-post-full.component';
 import { BlogPostCommentsComponent } from './blog-post-comments.component';
 import { AuditRequestFormComponent } from './audit-request-form.component';
+import { EmailJsService } from './emailjs.service'
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { AuditRequestFormComponent } from './audit-request-form.component';
     BlogPostCommentsComponent,
     AuditRequestFormComponent
   ],
-  providers: [BlogPostService],
+  providers: [BlogPostService, EmailJsService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

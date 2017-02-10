@@ -16,6 +16,7 @@ import { BlogPostService } from './blog-post.service';
 import { BlogPostFullComponent } from './blog-post-full.component';
 import { BlogPostCommentsComponent } from './blog-post-comments.component';
 import { AuditRequestFormComponent } from './audit-request-form.component';
+import { EmailJsService } from './emailjs.service';
 
 import {APP_BASE_HREF} from '@angular/common';
 
@@ -37,5 +38,5 @@ export var TestModuleSetting = {
             AuditRequestFormComponent
       ],
       imports: [AppRoutingModule, HttpModule, FormsModule],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }, BlogPostService]
+      providers: [{provide: APP_BASE_HREF, useValue : '/' }, BlogPostService, EmailJsService]
 };
