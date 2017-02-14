@@ -18,6 +18,8 @@ import { BlogPostCommentsComponent } from './blog-post-comments.component';
 import { AuditRequestFormComponent } from './audit-request-form.component';
 import { EmailJsService } from './emailjs.service';
 
+import { ReCaptchaModule } from 'angular2-recaptcha';
+
 import {APP_BASE_HREF} from '@angular/common';
 
 import * as moment from 'moment';
@@ -37,6 +39,6 @@ export var TestModuleSetting = {
             BlogPostCommentsComponent,
             AuditRequestFormComponent
       ],
-      imports: [AppRoutingModule, HttpModule, FormsModule],
+      imports: [AppRoutingModule, HttpModule, FormsModule, ReCaptchaModule],
       providers: [{provide: APP_BASE_HREF, useValue : '/' }, BlogPostService, EmailJsService]
 };

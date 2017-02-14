@@ -23,6 +23,7 @@
 		<link href="assets/css/blog.css" rel="stylesheet" type="text/css" />
 
 
+
 		<!-- THEME CSS -->
 		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
@@ -38,6 +39,15 @@
 		</style>
 		<!-- /LOCAL CSS -->
 
+		<!-- EMAIL SERVICE FOR FORMS -->
+		<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script type="text/javascript">
+			(function(){
+					emailjs.init("user_zMITbW7sxLURrKiTSyL2y");
+			})();
+		</script>
+
+
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
 
@@ -52,7 +62,7 @@
 
 
 
-    <script defer src='https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit'></script>
+    <!--<script defer async src='https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit'></script>-->
   </head>
 
   <body>
@@ -77,11 +87,11 @@
 				}
 			});
 
-			var CaptchaCallback = function(){
-				$('.g-recaptcha').each(function(index, el) {
-					grecaptcha.render(el, {'sitekey' : '6LdpdwwUAAAAAMAKb1xXxGpBoh9V6YFgGDKpI4mg'});
-				});
-			};
+			// var CaptchaCallback = function(){
+			// 	$('.g-recaptcha').each(function(index, el) {
+			// 		grecaptcha.render(el, {'sitekey' : '6LdpdwwUAAAAAMAKb1xXxGpBoh9V6YFgGDKpI4mg'});
+			// 	});
+			// };
 		</script>
 
 		<script type="text/javascript" src="assets/js/scripts.js"></script>

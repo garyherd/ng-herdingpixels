@@ -18,7 +18,9 @@ import { BlogPostService } from './blog-post.service';
 import { BlogPostFullComponent } from './blog-post-full.component';
 import { BlogPostCommentsComponent } from './blog-post-comments.component';
 import { AuditRequestFormComponent } from './audit-request-form.component';
-import { EmailJsService } from './emailjs.service'
+import { EmailJsService } from './emailjs.service';
+
+import { ReCaptchaModule } from 'angular2-recaptcha';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { EmailJsService } from './emailjs.service'
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    ReCaptchaModule
   ],
   declarations: [
     AppComponent,

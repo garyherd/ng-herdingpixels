@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { AuditRequestInfo } from './blog-post';
 import { EmailJsService } from './emailjs.service';
 
+import { ReCaptchaModule } from 'angular2-recaptcha';
+
 
 @Component({
   moduleId: module.id,
@@ -13,6 +15,7 @@ import { EmailJsService } from './emailjs.service';
 export class AuditRequestFormComponent {
 
   requestInfo: AuditRequestInfo = {};
+  emailSent: boolean = false;
 
   constructor(private emailJsService: EmailJsService) {}
 

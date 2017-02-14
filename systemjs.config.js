@@ -27,7 +27,8 @@
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       // 'moment':                    'npm:moment/moment.js'
-      'moment': 'npm:moment'
+      'moment': 'npm:moment',
+      'angular2-recaptcha': 'npm:angular2-recaptcha'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -41,6 +42,10 @@
       moment: {
         main: './moment.js',
         defaultExtension: 'js'
+      },
+      'angular2-recaptcha': {
+        defaultExtension: 'js',
+        main: 'index'
       }
     }
   });
