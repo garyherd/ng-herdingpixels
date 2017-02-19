@@ -15,14 +15,18 @@ import { ReCaptchaModule } from 'angular2-recaptcha';
 export class AuditRequestFormComponent {
 
   requestInfo: AuditRequestInfo = {};
-  emailSent: boolean = false;
+  emailSent: boolean;
+  emailNotSent: boolean;
 
-  constructor(private emailJsService: EmailJsService) {}
-
-  get diagnostic() { return JSON.stringify(this.requestInfo); }
+  constructor(private emailJsService: EmailJsService) {
+    this.emailSent = false;
+    this.emailNotSent = false;
+  }
 
   submitAuditForm () {
-    this.emailJsService.sendAuditForm();
+    this.emailJsService.sendAuditForm().then((result: any) => {
+      result === "OK" ? this.emailSent = true : this.emailNotSent = true;
+    });
   }
 
 }

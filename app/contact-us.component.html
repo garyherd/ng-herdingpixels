@@ -22,13 +22,13 @@
               <div class="col-md-6">
                 <label>Full Name *</label>
                 <input type="text" value="" data-msg-required="Please enter your name." maxlength="100"
-                class="form-control" name="contact_name" id="contact_name" required>
+                class="form-control" name="contact_name" id="contact_name" required [(ngModel)]="messageInfo.name">
               </div>
               <div class="col-md-6">
                 <label>E-mail Address *</label>
                 <input type="email" value="" data-msg-required="Please enter your email address."
                 data-msg-email="Please enter a valid email address." maxlength="100" class="form-control"
-                name="contact_email" id="contact_email" required>
+                name="contact_email" id="contact_email" required [(ngModel)]="messageInfo.email">
               </div>
             </div>
           </div>
@@ -36,7 +36,8 @@
             <div class="form-group">
               <div class="col-md-12">
                 <label>Subject</label>
-                <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="contact_subject" id="contact_subject">
+                <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100"
+                class="form-control" name="contact_subject" id="contact_subject" [(ngModel)]="messageInfo.subject">
               </div>
             </div>
           </div>
@@ -44,7 +45,8 @@
             <div class="form-group">
               <div class="col-md-12">
                 <label>Message *</label>
-                <textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="contact_message" id="contact_message" required></textarea>
+                <textarea maxlength="1000" data-msg-required="Please enter your message." rows="10" class="form-control"
+                name="contact_message" id="contact_message" required [(ngModel)]="messageInfo.message"></textarea>
               </div>
             </div>
           </div>
@@ -52,7 +54,7 @@
           <div class="row">
             <div class="form-group">
               <div class="col-md-12">
-                <div class="g-recaptcha " data-sitekey="6LdpdwwUAAAAAMAKb1xXxGpBoh9V6YFgGDKpI4mg"></div>
+                <re-captcha site_key="6LdpdwwUAAAAAMAKb1xXxGpBoh9V6YFgGDKpI4mg" class="center-block"></re-captcha>
               </div>
             </div>
           </div>
@@ -60,7 +62,7 @@
           <div class="row">
             <div class="form-group">
               <div class="col-md-12">
-                <input id="contact_submit" type="submit" value="Send Message" class="btn btn-primary btn-lg">
+                <input id="contact_submit" type="button" (click)="submitMessageForm()" value="Send Message" class="btn btn-primary btn-lg">
               </div>
             </div>
           </div>
@@ -68,14 +70,14 @@
         </form>
 
         <!-- SENT OK -->
-        <div id="contact_sent_ok_" class="alert alert-success fade in fsize16 hide">
+        <div id="contact_sent_ok_" class="alert alert-success fade in fsize16" [class.hide]="!emailSent">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <strong>Thank You!</strong> Your message successfully sent!
         </div>
         <!-- /SENT OK -->
 
         <!-- SENT FAILED -->
-        <div id="contact_sent_error_" class="alert alert-danger fade in fsize16 hide">
+        <div id="contact_sent_error_" class="alert alert-danger fade in fsize16" [class.hide]="!emailNotSent">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <strong>Send email failed!</strong>
         </div>

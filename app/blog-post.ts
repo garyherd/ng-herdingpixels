@@ -85,3 +85,10 @@ export interface AuditRequestInfo {
   email?: string;
   url?: string;
 }
+
+export interface MessageInfo {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+}

@@ -7,29 +7,29 @@ export class EmailJsService {
   private EMAIL_USER_KEY: string = "user_zMITbW7sxLURrKiTSyL2y";
   private service_id: string = "default_service"
   emailJsObj: any;
-  emailSent: boolean;
+  emailJsSent: boolean;
 
   constructor() {
     // this.emailJsObj.sendAuditForm = emailjs.sendForm(this.service_id, 'audit_form');
     this.emailJsObj = emailjs;
-
+    this.emailJsSent = false;
   }
 
   sendContactForm() {
-    console.log("contact form submitted!");
+    return this.emailJsObj.sendForm(this.service_id, "contact_form", "contactForm")
+      .then(function(response: any) {
+        return response.text;
+      }, function(err: any) {
+         console.log("email not sent");
+      });
   }
 
   sendAuditForm() {
-
-    let template_id = "audit_form";
-
-    this.emailJsObj.sendForm(this.service_id, template_id, "auditForm")
-        .then(function() {
-            console.log("email sent successfully");
-        }, function(err: any) {
-            console.log("email not sent");
-        });
-
+    return this.emailJsObj.sendForm(this.service_id, "audit_form", "auditForm")
+      .then(function(response: any) {
+        return response.text;
+      }, function(err: any) {
+         console.log("email not sent");
+      });
   }
-
 }
